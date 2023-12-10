@@ -1,0 +1,2 @@
+# DataSet 
+Датасет с речевыми сигналами и шумами размещен по адресу https://github.com/gubinmv/dataset-voices-noise.git
