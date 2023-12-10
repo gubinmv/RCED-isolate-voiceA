@@ -1,0 +1,19 @@
+#!/bin/bash
+#SBATCH --job-name=my_python
+#SBATCH --gpus=1
+#SBATCH --time=7-00:00  
+ python -V
+
+ python create_dataset.py
+
+ rm -f *.hdf5
+ cp ./temp/model_conv1d-15skip.hdf5 ./model_conv1d-15skip.hdf5
+
+ sleep 5
+ python start_train.py
+
+ sleep 5
+ python test_Forward_Backward.py
+
+ sleep 5
+ rm -f *.npz
